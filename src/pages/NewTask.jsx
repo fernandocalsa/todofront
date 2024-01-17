@@ -6,18 +6,7 @@ export const NewTask = ({ token }) => {
 
   const createTask = async (e) => {
     e.preventDefault()
-    const taskResponse = await axios.post(
-      'http://localhost:8000/tasks',
-      {
-        name
-      },
-      {
-        headers: {
-          Authorization: token
-        }
-      }
-    )
-    console.log(taskResponse)
+    await api.createTask(name, token)
   }
 
   return (
